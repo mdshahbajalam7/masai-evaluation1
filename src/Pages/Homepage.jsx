@@ -1,11 +1,13 @@
-import React from 'react'
-import ProductPage from './ProductPage'
+import React from "react";
+import ProductPage from "./ProductPage";
 
 const Homepage = () => {
-    //Do not modify anything in this file
-    return (
-        <div><ProductPage /></div>
-    )
-}
+  //Do not modify anything in this file
+  return (
+    <div>
+      <ProductPage />
+    </div>
+  );
+};
 
-export default Homepage
+export default Homepage;

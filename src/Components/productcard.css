@@ -10,3 +10,11 @@
     border-radius: 3px;
     margin: 0 5px;
 }
+.img{
+    width: 100%;
+}
+.maindiv{
+    border: 1px solid ;
+    padding: 5px;
+    border-radius: 10px;
+}
