@@ -2,6 +2,7 @@ import {
   ADD_PRODUCT_FAILURE,
   ADD_PRODUCT_REQUEST,
   ADD_PRODUCT_SUCCESS,
+  ADD_TO_CART,
   // DELETE_PRODUCT_SUCCESS,
   GET_PRODUCTS_FAILURE,
   GET_PRODUCTS_REQUEST,
@@ -10,6 +11,7 @@ import {
 
 const initialState = {
   products: [],
+  cart :[],
   isLoading: false,
   isError: false,
 };
@@ -53,16 +55,17 @@ export const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         products: [...state.products, payload],
+        cart: state.products.filter(product => product.cartQuantity>0),
         isLoading: false,
         isError: false,
       };
     }
-    // case DELETE_PRODUCT_SUCCESS:{
-    //   return {
-    //   ...state,
-    //     products: state.products.filter(product => product.id!== payload),
-    //   }
-    // }
+    case ADD_TO_CART:{
+      return {
+      ...state,
+        cart: state.products.filter(product => product.cartQuantity>0)
+      }
+    }
   }
   return state;
 };

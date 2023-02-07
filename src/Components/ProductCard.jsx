@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { deleteProducts } from "../Redux/action";
+import { deleteProducts, incrementProduct } from "../Redux/action";
 import "./productcard.css";
 
 const ProductCard = (item) => {
@@ -8,8 +8,14 @@ const ProductCard = (item) => {
   const deletebutton = (id) => {
     dispatch(deleteProducts(id));
   };
-  const handleincrementClick = () => {};
-  const handledecenmentClick = () => {};
+  const handleincrementClick = (itemId, cartQuantity) => {
+    let payload = { cartQuantity: item.cartQuantity + 1 };
+    dispatch(incrementProduct(itemId, payload));
+  };
+  const handledecenmentClick = (itemId, cartQuantity) => {
+    let payload = { cartQuantity: item.cartQuantity - 1 };
+    dispatch(incrementProduct(itemId, payload));
+  };
   const handledivClick = () => {
     navigator(`/cart`);
   };
@@ -43,7 +49,7 @@ const ProductCard = (item) => {
         </div>
         <div>
           <button
-            onClick={handleincrementClick}
+            onClick={() => handleincrementClick(item.id, item.cartQuantity)}
             data-cy="add-to-cart"
             className="add-to-cart"
           >

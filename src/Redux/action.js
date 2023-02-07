@@ -74,3 +74,19 @@ export const deleteProducts = (id) => (dispatch) => {
       throw err.massege;
     });
 };
+
+export const incrementProduct=(itemId,payload) => (dispatch) => {
+  dispatch({ type: ADD_PRODUCT_REQUEST });
+  axios
+  .patch(
+      `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/products/${itemId}`,payload
+    )
+  .then(({ data }) => {
+      console.log("data", data);
+      dispatch(getProducts());
+    })
+  .catch((err) => {
+      dispatch({ type: ADD_PRODUCT_FAILURE });
+      console.log(err.massege);
+    });
+}
