@@ -1,6 +1,9 @@
-.product-cards{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
-    justify-items: center;
-    gap: 10px;
+.product-cards {
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+  justify-items: center;
+  gap: 10px;
 }

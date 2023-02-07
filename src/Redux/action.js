@@ -1,6 +1,12 @@
 //Write the API calling functions here;
 import axios from "axios";
 import {
+  ADD_PRODUCT_FAILURE,
+  ADD_PRODUCT_REQUEST,
+  ADD_PRODUCT_SUCCESS,
+  DELETE_PRODUCT_FAILURE,
+  DELETE_PRODUCT_REQUEST,
+  DELETE_PRODUCT_SUCCESS,
   GET_PRODUCTS_FAILURE,
   GET_PRODUCTS_REQUEST,
   GET_PRODUCTS_SUCCESS,
@@ -19,5 +25,52 @@ export const getProducts = () => async (dispatch) => {
     .catch((err) => {
       dispatch({ type: GET_PRODUCTS_FAILURE });
       console.log(err.massege);
+    });
+};
+
+export const postProducts = (payload) => (dispatch) => {
+  console.log(payload);
+  dispatch({ type: ADD_PRODUCT_REQUEST });
+  axios
+    .post(
+      `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/products`,
+      payload
+    )
+    .then(({ data }) => {
+      console.log("data", data);
+      dispatch({ type: ADD_PRODUCT_SUCCESS, payload: data });
+    })
+    .catch((err) => {
+      dispatch({ type: ADD_PRODUCT_FAILURE });
+      console.log(err.massege);
+    });
+};
+
+export const deleteProducts = (id) => (dispatch) => {
+  dispatch({ type: DELETE_PRODUCT_REQUEST });
+  // axios
+  //   .delete(
+  //     `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/products/${id}`
+  //   )
+  //   .then(({ data }) => {
+  //     console.log("data", data);
+  //     dispatch(getProducts());
+
+  //   })
+  //   .catch((err) => {
+  //     dispatch({ type: DELETE_PRODUCT_FAILURE });
+  //     console.log(err.massege);
+  //   });
+  axios
+    .delete(
+      `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/products/${id}`
+    )
+    .then(({ data }) => {
+      console.log(data);
+      dispatch(getProducts());
+    })
+    .catch((err) => {
+      dispatch({ type: DELETE_PRODUCT_FAILURE });
+      throw err.massege;
     });
 };

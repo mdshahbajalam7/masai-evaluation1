@@ -9,7 +9,6 @@ const ProductPage = () => {
   const { isLoading, isError, products } = useSelector(
     (state) => state.product
   );
-  console.log(products);
 
   useEffect(() => {
     dispatch(getProducts());

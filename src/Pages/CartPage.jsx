@@ -1,6 +1,9 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 const CartPage = () => {
+  const {id}=useParams()
+  console.log(id)
   return (
     <div>
       <div className="cart-heading">Cart Page</div>
