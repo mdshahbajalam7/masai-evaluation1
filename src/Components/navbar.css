@@ -26,3 +26,24 @@
   left: -8px;
   top: -8px;
 }
+.container {
+  display: flex;
+  padding: 0 10px;
+  position: relative;
+}
+.innerdiv {
+  position: absolute;
+  right: 30px;
+  top: 12px;
+  display: flex;
+  gap: 30px;
+}
+.div {
+  position: relative;
+}
+/* @media only screen and (max-width: 600px) {
+  .navbar-add-product-btn{
+    margin-top: 35px;
+
+  }
+} */

@@ -1,6 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { deleteProducts, incrementProduct } from "../Redux/action";
+import {
+  decerimentProduct,
+  deleteProducts,
+  incrementProduct,
+} from "../Redux/action";
 import "./productcard.css";
 
 const ProductCard = (item) => {
@@ -14,10 +18,11 @@ const ProductCard = (item) => {
   };
   const handledecenmentClick = (itemId, cartQuantity) => {
     let payload = { cartQuantity: item.cartQuantity - 1 };
-    dispatch(incrementProduct(itemId, payload));
+    console.log("payload",payload);
+    dispatch(decerimentProduct(itemId, payload));
   };
   const handledivClick = () => {
-    navigator(`/cart`);
+    // navigator(`/cart`);
   };
   return (
     <div
@@ -35,8 +40,8 @@ const ProductCard = (item) => {
           alt="Product"
         />
       </div>
-      <div data-cy="product-card-price">€ {item.price}</div>
-      <div>
+      <div data-cy="product-card-price">₹ {item.price}</div>
+      <div className="flex-div">
         <div>
           {/* Add a onClick handler for delete functionality */}
           <button
@@ -57,7 +62,7 @@ const ProductCard = (item) => {
           </button>
           <span data-cy="product-quantity">{item.cartQuantity}</span>
           <button
-            onClick={handledecenmentClick}
+            onClick={()=>handledecenmentClick(item.id, item.cartQuantity)}
             data-cy="remove-from-cart"
             className="remove-from-cart"
           >

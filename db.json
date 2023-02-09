@@ -6,7 +6,7 @@
       "category": "Electronics",
       "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cHJvZHVjdHN8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
       "price": 10,
-      "cartQuantity": 8
+      "cartQuantity": 0
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "category": "Cosmetics",
       "image": "https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZHVjdHN8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
       "price": 15,
-      "cartQuantity": 8
+      "cartQuantity": 0
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "category": "Cosmetics",
       "image": "https://images.unsplash.com/photo-1627384113710-424c9181ebbb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fHByb2R1Y3RzfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
       "price": 15,
-      "cartQuantity": 3
+      "cartQuantity": 1
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "category": "Cosmetics",
       "image": "https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHByb2R1Y3RzfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
       "price": 23,
-      "cartQuantity": 1
+      "cartQuantity": 0
     },
     {
       "id": 5,
@@ -54,7 +54,7 @@
       "category": "Electronics",
       "price": 102,
       "image": "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fHByb2R1Y3RzfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
-      "cartQuantity": 0
+      "cartQuantity": 1
     },
     {
       "id": 8,
@@ -85,14 +85,16 @@
       "image": "https://images.unsplash.com/photo-1674805360983-a8b8a2def7f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDN8Ym84alFLVGFFMFl8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
       "category": "Electronics",
       "price": "123",
-      "id": 11
+      "id": 11,
+      "cartQuantity": 0
     },
     {
       "name": "chand",
       "image": "https://plus.unsplash.com/premium_photo-1675259105359-44a9d0c460aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80",
       "category": "Shoes",
       "price": "789",
-      "id": 12
+      "id": 12,
+      "cartQuantity": 1
     }
   ]
 }

@@ -48,19 +48,6 @@ export const postProducts = (payload) => (dispatch) => {
 
 export const deleteProducts = (id) => (dispatch) => {
   dispatch({ type: DELETE_PRODUCT_REQUEST });
-  // axios
-  //   .delete(
-  //     `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/products/${id}`
-  //   )
-  //   .then(({ data }) => {
-  //     console.log("data", data);
-  //     dispatch(getProducts());
-
-  //   })
-  //   .catch((err) => {
-  //     dispatch({ type: DELETE_PRODUCT_FAILURE });
-  //     console.log(err.massege);
-  //   });
   axios
     .delete(
       `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/products/${id}`
@@ -75,18 +62,36 @@ export const deleteProducts = (id) => (dispatch) => {
     });
 };
 
-export const incrementProduct=(itemId,payload) => (dispatch) => {
+export const incrementProduct = (itemId, payload) => (dispatch) => {
   dispatch({ type: ADD_PRODUCT_REQUEST });
   axios
-  .patch(
-      `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/products/${itemId}`,payload
+    .patch(
+      `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/products/${itemId}`,
+      payload
     )
-  .then(({ data }) => {
+    .then(({ data }) => {
       console.log("data", data);
       dispatch(getProducts());
     })
-  .catch((err) => {
+    .catch((err) => {
       dispatch({ type: ADD_PRODUCT_FAILURE });
       console.log(err.massege);
     });
-}
+};
+export const decerimentProduct = (itemId, payload) => (dispatch) => {
+  console.log("itemId", itemId, "payload", payload);
+  dispatch({ type: ADD_PRODUCT_REQUEST });
+  axios
+    .patch(
+      `http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/products/${itemId}`,
+      payload
+    )
+    .then(({ data }) => {
+      console.log("data", data);
+      dispatch(getProducts());
+    })
+    .catch((err) => {
+      dispatch({ type: ADD_PRODUCT_FAILURE });
+      console.log(err.massege);
+    });
+};

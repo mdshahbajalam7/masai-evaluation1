@@ -11,7 +11,7 @@ import {
 
 const initialState = {
   products: [],
-  cart :[],
+  cart: [],
   isLoading: false,
   isError: false,
 };
@@ -34,6 +34,7 @@ export const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         products: payload,
+        cart: state.products.filter((product) => product.cartQuantity > 0),
         isLoading: false,
         isError: false,
       };
@@ -55,16 +56,9 @@ export const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         products: [...state.products, payload],
-        cart: state.products.filter(product => product.cartQuantity>0),
         isLoading: false,
         isError: false,
       };
-    }
-    case ADD_TO_CART:{
-      return {
-      ...state,
-        cart: state.products.filter(product => product.cartQuantity>0)
-      }
     }
   }
   return state;
