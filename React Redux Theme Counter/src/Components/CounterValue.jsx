@@ -1,7 +1,7 @@
 import React from "react";
 
-const CounterValue = () => {
-  return <div data-testid="counterValue"></div>;
+const CounterValue = ({count}) => {
+  return <div data-testid="counterValue">{count}</div>;
 };
 
 export default CounterValue;

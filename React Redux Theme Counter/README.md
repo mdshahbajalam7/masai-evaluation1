@@ -45,7 +45,8 @@ npm run test
 - use redux to create a store and write in the following files
   - action.js ( action object creators )
   - counterReducer.js ( reducer function for Counter)
-  - themeReducer.js (reducer function for Theme)
+  - themeReducer.js
+  -  (reducer function for Theme)
   - store.js ( store )
   - Use combineReducers to combine both themeReducer and counterReducer in the store.
 - Create these components
