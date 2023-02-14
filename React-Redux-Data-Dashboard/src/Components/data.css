@@ -1,0 +1,48 @@
+.navbar {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 12px;
+  background-color: violet;
+  margin: 10px;
+}
+.link {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+.link:hover {
+  color: red;
+}
+.coffee_data {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  text-align: center;
+}
+.img {
+  width: 200px;
+  height: 150px;
+}
+.data {
+  padding: 10px;
+  box-shadow: rgba(3, 178, 253, 0.35) 0px 5px 15px;
+}
+.employee_data {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  text-align: center;
+}
+.restaurant_data {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  text-align: center;
+}
